@@ -1,0 +1,11 @@
+{
+  "name": "protocol-abis",
+  "version": "0.2.5",
+  "description": "",
+  "main": "getAbis.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
