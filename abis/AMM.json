@@ -11,19 +11,31 @@
       {
         "indexed": false,
         "internalType": "int256",
+        "name": "takerPosSize",
+        "type": "int256"
+      },
+      {
+        "indexed": false,
+        "internalType": "int256",
+        "name": "takerFundingPayment",
+        "type": "int256"
+      },
+      {
+        "indexed": false,
+        "internalType": "int256",
+        "name": "makerFundingPayment",
+        "type": "int256"
+      },
+      {
+        "indexed": false,
+        "internalType": "int256",
         "name": "latestCumulativePremiumFraction",
         "type": "int256"
       },
       {
         "indexed": false,
         "internalType": "int256",
-        "name": "positionSize",
-        "type": "int256"
-      },
-      {
-        "indexed": false,
-        "internalType": "int256",
-        "name": "fundingPayment",
+        "name": "latestPremiumPerDtoken",
         "type": "int256"
       }
     ],
@@ -65,6 +77,25 @@
       }
     ],
     "name": "FundingRateUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "maker",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "int256",
+        "name": "realizedPnl",
+        "type": "int256"
+      }
+    ],
+    "name": "LiquidityRemoved",
     "type": "event"
   },
   {
@@ -156,6 +187,12 @@
         "internalType": "uint256",
         "name": "lastPrice",
         "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "openInterestNotional",
+        "type": "uint256"
       }
     ],
     "name": "Swap",
@@ -173,6 +210,29 @@
     ],
     "name": "Unpaused",
     "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "trader",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "baseAssetQuantity",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "minDToken",
+        "type": "uint256"
+      }
+    ],
+    "name": "addLiquidity",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
     "inputs": [
@@ -206,23 +266,25 @@
     "type": "function"
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "name": "cumulativePremiumFractions",
+    "inputs": [],
+    "name": "cumulativePremiumFraction",
     "outputs": [
       {
-        "internalType": "uint256",
-        "name": "blockNumber",
-        "type": "uint256"
-      },
+        "internalType": "int256",
+        "name": "",
+        "type": "int256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "cumulativePremiumPerDtoken",
+    "outputs": [
       {
         "internalType": "int256",
-        "name": "cumulativePremiumFraction",
+        "name": "",
         "type": "int256"
       }
     ],
@@ -271,35 +333,17 @@
   {
     "inputs": [
       {
-        "internalType": "address",
-        "name": "trader",
-        "type": "address"
-      }
-    ],
-    "name": "getFundingPayment",
-    "outputs": [
-      {
         "internalType": "int256",
-        "name": "fundingPayment",
-        "type": "int256"
-      },
-      {
-        "internalType": "int256",
-        "name": "latestCumulativePremiumFraction",
+        "name": "baseAssetQuantity",
         "type": "int256"
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "getLatestCumulativePremiumFraction",
+    "name": "getCloseQuote",
     "outputs": [
       {
-        "internalType": "int256",
-        "name": "premiumFraction",
-        "type": "int256"
+        "internalType": "uint256",
+        "name": "quoteAssetQuantity",
+        "type": "uint256"
       }
     ],
     "stateMutability": "view",
@@ -324,6 +368,16 @@
         "internalType": "int256",
         "name": "unrealizedPnl",
         "type": "int256"
+      },
+      {
+        "internalType": "int256",
+        "name": "size",
+        "type": "int256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "openNotional",
+        "type": "uint256"
       }
     ],
     "stateMutability": "view",
@@ -338,7 +392,7 @@
       },
       {
         "internalType": "uint256",
-        "name": "notionalPosition",
+        "name": "newNotionalPosition",
         "type": "uint256"
       },
       {
@@ -350,11 +404,6 @@
         "internalType": "int256",
         "name": "baseAssetQuantity",
         "type": "int256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "quoteAsset",
-        "type": "uint256"
       }
     ],
     "name": "getOpenNotionalWhileReducingPosition",
@@ -376,17 +425,32 @@
   {
     "inputs": [
       {
-        "internalType": "int256",
-        "name": "baseAssetQuantity",
-        "type": "int256"
+        "internalType": "address",
+        "name": "trader",
+        "type": "address"
       }
     ],
-    "name": "getQuote",
+    "name": "getPendingFundingPayment",
     "outputs": [
       {
-        "internalType": "uint256",
-        "name": "qouteAssetQuantity",
-        "type": "uint256"
+        "internalType": "int256",
+        "name": "takerFundingPayment",
+        "type": "int256"
+      },
+      {
+        "internalType": "int256",
+        "name": "makerFundingPayment",
+        "type": "int256"
+      },
+      {
+        "internalType": "int256",
+        "name": "latestCumulativePremiumFraction",
+        "type": "int256"
+      },
+      {
+        "internalType": "int256",
+        "name": "latestPremiumPerDtoken",
+        "type": "int256"
       }
     ],
     "stateMutability": "view",
@@ -412,6 +476,30 @@
       {
         "internalType": "int256",
         "name": "",
+        "type": "int256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "trader",
+        "type": "address"
+      }
+    ],
+    "name": "getTakerNotionalPositionAndUnrealizedPnl",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "takerNotionalPosition",
+        "type": "uint256"
+      },
+      {
+        "internalType": "int256",
+        "name": "unrealizedPnl",
         "type": "int256"
       }
     ],
@@ -553,6 +641,55 @@
     "type": "function"
   },
   {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "makers",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "vUSD",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "vAsset",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "dToken",
+        "type": "uint256"
+      },
+      {
+        "internalType": "int256",
+        "name": "pos",
+        "type": "int256"
+      },
+      {
+        "internalType": "int256",
+        "name": "posAccumulator",
+        "type": "int256"
+      },
+      {
+        "internalType": "int256",
+        "name": "lastPremiumFraction",
+        "type": "int256"
+      },
+      {
+        "internalType": "int256",
+        "name": "lastPremiumPerDtoken",
+        "type": "int256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [],
     "name": "name",
     "outputs": [
@@ -678,11 +815,45 @@
       },
       {
         "internalType": "int256",
-        "name": "lastUpdatedCumulativePremiumFraction",
+        "name": "lastPremiumFraction",
         "type": "int256"
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "maker",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "minQuote",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "minBase",
+        "type": "uint256"
+      }
+    ],
+    "name": "removeLiquidity",
+    "outputs": [
+      {
+        "internalType": "int256",
+        "name": "",
+        "type": "int256"
+      }
+    ],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -748,18 +919,7 @@
   {
     "inputs": [],
     "name": "settleFunding",
-    "outputs": [
-      {
-        "internalType": "int256",
-        "name": "",
-        "type": "int256"
-      },
-      {
-        "internalType": "int256",
-        "name": "",
-        "type": "int256"
-      }
-    ],
+    "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
   },
