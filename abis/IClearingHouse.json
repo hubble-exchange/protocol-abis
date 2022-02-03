@@ -1,86 +1,5 @@
 [
   {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "amm",
-        "type": "address"
-      }
-    ],
-    "name": "MarketAdded",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "trader",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "amm",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "int256",
-        "name": "size",
-        "type": "int256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "quoteAsset",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "int256",
-        "name": "realizedPnl",
-        "type": "int256"
-      }
-    ],
-    "name": "PositionLiquidated",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "trader",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "internalType": "uint256",
-        "name": "idx",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "int256",
-        "name": "baseAssetQuantity",
-        "type": "int256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "quoteAsset",
-        "type": "uint256"
-      }
-    ],
-    "name": "PositionModified",
-    "type": "event"
-  },
-  {
     "inputs": [
       {
         "internalType": "uint256",
@@ -94,7 +13,7 @@
       },
       {
         "internalType": "uint256",
-        "name": "quoteAssetLimit",
+        "name": "minDToken",
         "type": "uint256"
       }
     ],
@@ -107,7 +26,7 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "",
+        "name": "idx",
         "type": "uint256"
       }
     ],
@@ -245,99 +164,6 @@
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "governance",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "trader",
-        "type": "address"
-      }
-    ],
-    "name": "hasLiquidity",
-    "outputs": [
-      {
-        "internalType": "bool",
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "_trustedForwarder",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "_governance",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "_insuranceFund",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "_marginAccount",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "_vusd",
-        "type": "address"
-      },
-      {
-        "internalType": "int256",
-        "name": "_maintenanceMargin",
-        "type": "int256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_tradeFee",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_liquidationPenalty",
-        "type": "uint256"
-      }
-    ],
-    "name": "initialize",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "insuranceFund",
-    "outputs": [
-      {
-        "internalType": "contract IInsuranceFund",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [
       {
         "internalType": "address",
@@ -360,11 +186,30 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "forwarder",
+        "name": "trader",
         "type": "address"
       }
     ],
-    "name": "isTrustedForwarder",
+    "name": "isAboveMinAllowableMargin",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "trader",
+        "type": "address"
+      }
+    ],
+    "name": "isMaker",
     "outputs": [
       {
         "internalType": "bool",
@@ -392,7 +237,7 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "maker",
+        "name": "trader",
         "type": "address"
       }
     ],
@@ -404,12 +249,12 @@
   {
     "inputs": [
       {
-        "internalType": "address[]",
-        "name": "traders",
-        "type": "address[]"
+        "internalType": "address",
+        "name": "trader",
+        "type": "address"
       }
     ],
-    "name": "liquidateMany",
+    "name": "liquidateTaker",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -435,19 +280,6 @@
         "internalType": "int256",
         "name": "",
         "type": "int256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "marginAccount",
-    "outputs": [
-      {
-        "internalType": "contract IMarginAccount",
-        "name": "",
-        "type": "address"
       }
     ],
     "stateMutability": "view",
@@ -505,19 +337,6 @@
     "type": "function"
   },
   {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "_governance",
-        "type": "address"
-      }
-    ],
-    "name": "setGovernace",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
     "inputs": [],
     "name": "settleFunding",
     "outputs": [],
@@ -546,32 +365,6 @@
       }
     ],
     "name": "updatePositions",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "vusd",
-    "outputs": [
-      {
-        "internalType": "contract VUSD",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "_amm",
-        "type": "address"
-      }
-    ],
-    "name": "whitelistAmm",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
