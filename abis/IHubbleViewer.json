@@ -1,5 +1,18 @@
 [
   {
+    "inputs": [],
+    "name": "clearingHouse",
+    "outputs": [
+      {
+        "internalType": "contract IClearingHouse",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
     "inputs": [
       {
         "internalType": "address",
@@ -31,6 +44,19 @@
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "marginAccount",
+    "outputs": [
+      {
+        "internalType": "contract IMarginAccount",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
     "type": "function"
   }
 ]
