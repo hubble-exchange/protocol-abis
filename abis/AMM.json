@@ -69,6 +69,12 @@
       },
       {
         "indexed": false,
+        "internalType": "int256",
+        "name": "posAccumulator",
+        "type": "int256"
+      },
+      {
+        "indexed": false,
         "internalType": "uint256",
         "name": "nextFundingTime",
         "type": "uint256"
@@ -286,18 +292,6 @@
   {
     "anonymous": false,
     "inputs": [
-      {
-        "indexed": false,
-        "internalType": "int256",
-        "name": "baseAsset",
-        "type": "int256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "quoteAsset",
-        "type": "uint256"
-      },
       {
         "indexed": false,
         "internalType": "uint256",
@@ -825,6 +819,11 @@
         "type": "address"
       },
       {
+        "internalType": "uint256",
+        "name": "_minSizeRequirement",
+        "type": "uint256"
+      },
+      {
         "internalType": "address",
         "name": "_vamm",
         "type": "address"
@@ -983,7 +982,46 @@
   },
   {
     "inputs": [],
+    "name": "maxLiquidationPriceSpread",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "maxLiquidationRatio",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
     "name": "maxOracleSpreadRatio",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "minSizeRequirement",
     "outputs": [
       {
         "internalType": "uint256",
@@ -1122,6 +1160,11 @@
         "internalType": "int256",
         "name": "lastPremiumFraction",
         "type": "int256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "liquidationThreshold",
+        "type": "uint256"
       }
     ],
     "stateMutability": "view",
@@ -1161,17 +1204,17 @@
     "outputs": [
       {
         "internalType": "int256",
-        "name": "",
+        "name": "realizedPnl",
         "type": "int256"
       },
       {
         "internalType": "uint256",
-        "name": "",
+        "name": "makerOpenNotional",
         "type": "uint256"
       },
       {
         "internalType": "int256",
-        "name": "",
+        "name": "makerPosition",
         "type": "int256"
       }
     ],
@@ -1202,6 +1245,11 @@
         "internalType": "uint256",
         "name": "blockNumber",
         "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "isLiquidation",
+        "type": "bool"
       }
     ],
     "stateMutability": "view",
@@ -1237,11 +1285,42 @@
     "inputs": [
       {
         "internalType": "uint256",
+        "name": "_maxLiquidationRatio",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_maxLiquidationPriceSpread",
+        "type": "uint256"
+      }
+    ],
+    "name": "setLiquidationParams",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
         "name": "_maxOracleSpreadRatio",
         "type": "uint256"
       }
     ],
     "name": "setMaxOracleSpreadRatio",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_minSizeRequirement",
+        "type": "uint256"
+      }
+    ],
+    "name": "setMinSizeRequirement",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

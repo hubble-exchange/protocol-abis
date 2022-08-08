@@ -71,6 +71,12 @@
       },
       {
         "indexed": false,
+        "internalType": "int256",
+        "name": "realizedPnl",
+        "type": "int256"
+      },
+      {
+        "indexed": false,
         "internalType": "uint256",
         "name": "timestamp",
         "type": "uint256"
@@ -108,6 +114,12 @@
       },
       {
         "indexed": false,
+        "internalType": "int256",
+        "name": "realizedPnl",
+        "type": "int256"
+      },
+      {
+        "indexed": false,
         "internalType": "uint256",
         "name": "timestamp",
         "type": "uint256"
@@ -142,6 +154,12 @@
         "internalType": "uint256",
         "name": "quoteAsset",
         "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "int256",
+        "name": "realizedPnl",
+        "type": "int256"
       },
       {
         "indexed": false,
@@ -243,19 +261,6 @@
     ],
     "name": "assertMarginRequirement",
     "outputs": [],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "blackList",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
     "stateMutability": "view",
     "type": "function"
   },
@@ -799,19 +804,6 @@
       }
     ],
     "name": "removeLiquidity",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "_blackList",
-        "type": "address"
-      }
-    ],
-    "name": "setBlacklistContract",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

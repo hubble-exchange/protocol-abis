@@ -96,6 +96,11 @@
         "internalType": "int256",
         "name": "unrealizedPnl",
         "type": "int256"
+      },
+      {
+        "internalType": "int256",
+        "name": "marginFractionLiquidation",
+        "type": "int256"
       }
     ],
     "stateMutability": "view",
