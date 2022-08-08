@@ -1,6 +1,6 @@
 {
   "name": "protocol-abis",
-  "version": "0.2.5",
+  "version": "1.0.0",
   "description": "",
   "main": "getAbis.js",
   "scripts": {
