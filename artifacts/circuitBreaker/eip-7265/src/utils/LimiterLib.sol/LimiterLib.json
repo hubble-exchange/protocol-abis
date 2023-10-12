@@ -1,0 +1,26 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "LimiterLib",
+  "sourceName": "contracts/circuitBreaker/eip-7265/src/utils/LimiterLib.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "InvalidMinimumLiquidityThreshold",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "LimiterAlreadyInitialized",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "LimiterNotInitialized",
+      "type": "error"
+    }
+  ],
+  "bytecode": "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212201d0cc6c313fb260dcdb5e2c55d0563525c52694130c15da79f820c1ea5d6e4f764736f6c63430008090033",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212201d0cc6c313fb260dcdb5e2c55d0563525c52694130c15da79f820c1ea5d6e4f764736f6c63430008090033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

@@ -1,0 +1,143 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "Registry",
+  "sourceName": "contracts/Registry.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_oracle",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_clearingHouse",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_insuranceFund",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_marginAccount",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_vusd",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_orderBook",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_marginAccountHelper",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "clearingHouse",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "insuranceFund",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "marginAccount",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "marginAccountHelper",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "oracle",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "orderBook",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "vusd",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x61016060405234801561001157600080fd5b5060405161035138038061035183398101604081905261003091610082565b6001600160a01b0396871660805294861660a05292851660c05290841660e0528316610100528216610120521661014052610108565b80516001600160a01b038116811461007d57600080fd5b919050565b600080600080600080600060e0888a03121561009d57600080fd5b6100a688610066565b96506100b460208901610066565b95506100c260408901610066565b94506100d060608901610066565b93506100de60808901610066565b92506100ec60a08901610066565b91506100fa60c08901610066565b905092959891949750929550565b60805160a05160c05160e0516101005161012051610140516101f261015f600039600060d70152600060fe015260006101730152600061019a0152600061014c0152600060870152600061012501526101f26000f3fe608060405234801561001057600080fd5b506004361061007d5760003560e01c80637dc0d1d01161005b5780637dc0d1d014610120578063b790230314610147578063edac52031461016e578063f742269d1461019557600080fd5b80630af968001461008257806348d034b6146100d2578063776af5ba146100f9575b600080fd5b6100a97f000000000000000000000000000000000000000000000000000000000000000081565b60405173ffffffffffffffffffffffffffffffffffffffff909116815260200160405180910390f35b6100a97f000000000000000000000000000000000000000000000000000000000000000081565b6100a97f000000000000000000000000000000000000000000000000000000000000000081565b6100a97f000000000000000000000000000000000000000000000000000000000000000081565b6100a97f000000000000000000000000000000000000000000000000000000000000000081565b6100a97f000000000000000000000000000000000000000000000000000000000000000081565b6100a97f00000000000000000000000000000000000000000000000000000000000000008156fea26469706673582212208bb2a32f6bbfbcf8b488d32724aa1f839d9d82884a72dfa6e1b18932db6090f064736f6c63430008090033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061007d5760003560e01c80637dc0d1d01161005b5780637dc0d1d014610120578063b790230314610147578063edac52031461016e578063f742269d1461019557600080fd5b80630af968001461008257806348d034b6146100d2578063776af5ba146100f9575b600080fd5b6100a97f000000000000000000000000000000000000000000000000000000000000000081565b60405173ffffffffffffffffffffffffffffffffffffffff909116815260200160405180910390f35b6100a97f000000000000000000000000000000000000000000000000000000000000000081565b6100a97f000000000000000000000000000000000000000000000000000000000000000081565b6100a97f000000000000000000000000000000000000000000000000000000000000000081565b6100a97f000000000000000000000000000000000000000000000000000000000000000081565b6100a97f000000000000000000000000000000000000000000000000000000000000000081565b6100a97f00000000000000000000000000000000000000000000000000000000000000008156fea26469706673582212208bb2a32f6bbfbcf8b488d32724aa1f839d9d82884a72dfa6e1b18932db6090f064736f6c63430008090033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

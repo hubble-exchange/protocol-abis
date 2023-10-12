@@ -1,0 +1,94 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "TestPriceFeed",
+  "sourceName": "contracts/tests/TestPriceFeed.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "int256",
+          "name": "_price",
+          "type": "int256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "decimals",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "latestRoundData",
+      "outputs": [
+        {
+          "internalType": "uint80",
+          "name": "",
+          "type": "uint80"
+        },
+        {
+          "internalType": "int256",
+          "name": "",
+          "type": "int256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint80",
+          "name": "",
+          "type": "uint80"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "price",
+      "outputs": [
+        {
+          "internalType": "int256",
+          "name": "",
+          "type": "int256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "int256",
+          "name": "_price",
+          "type": "int256"
+        }
+      ],
+      "name": "setPrice",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b5060405161016138038061016183398101604081905261002f91610037565b600055610050565b60006020828403121561004957600080fd5b5051919050565b6101028061005f6000396000f3fe6080604052348015600f57600080fd5b506004361060465760003560e01c8063313ce56714604b578063a035b1fe14605f578063f7a30806146074578063feaf968c146086575b600080fd5b604051600881526020015b60405180910390f35b606760005481565b6040519081526020016056565b6084607f36600460b4565b600055565b005b60008054604080518381526020810192909252810182905260608101829052608081019190915260a0016056565b60006020828403121560c557600080fd5b503591905056fea264697066735822122025de900a0bee5e68c09e6c7fb1b00e84fe2b3da40d116eda0eac51aceb9cb91264736f6c63430008090033",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060465760003560e01c8063313ce56714604b578063a035b1fe14605f578063f7a30806146074578063feaf968c146086575b600080fd5b604051600881526020015b60405180910390f35b606760005481565b6040519081526020016056565b6084607f36600460b4565b600055565b005b60008054604080518381526020810192909252810182905260608101829052608081019190915260a0016056565b60006020828403121560c557600080fd5b503591905056fea264697066735822122025de900a0bee5e68c09e6c7fb1b00e84fe2b3da40d116eda0eac51aceb9cb91264736f6c63430008090033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

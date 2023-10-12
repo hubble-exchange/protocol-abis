@@ -1,0 +1,57 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "MockAggregator",
+  "sourceName": "contracts/tests/TestOracle.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "decimals",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "latestRoundData",
+      "outputs": [
+        {
+          "internalType": "uint80",
+          "name": "",
+          "type": "uint80"
+        },
+        {
+          "internalType": "int256",
+          "name": "answer",
+          "type": "int256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint80",
+          "name": "",
+          "type": "uint80"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x6080604052348015600f57600080fd5b5060b08061001e6000396000f3fe6080604052348015600f57600080fd5b506004361060325760003560e01c8063313ce567146037578063feaf968c14604b575b600080fd5b604051600881526020015b60405180910390f35b6040805160008082526305f5e100602083015291810182905260608101829052608081019190915260a001604256fea2646970667358221220e4b3b3ee26b8053c26af37e480ab0ff419c0452daa2cd4678fd185f0a4e0f00a64736f6c63430008090033",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060325760003560e01c8063313ce567146037578063feaf968c14604b575b600080fd5b604051600881526020015b60405180910390f35b6040805160008082526305f5e100602083015291810182905260608101829052608081019190915260a001604256fea2646970667358221220e4b3b3ee26b8053c26af37e480ab0ff419c0452daa2cd4678fd185f0a4e0f00a64736f6c63430008090033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
